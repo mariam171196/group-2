@@ -15,6 +15,7 @@ std::cin>> user_name;
 std::cout <<"How old are you?: \n";
 std::cin>> age_of_user;
 
+std::cout<<"Stop talking about you!\n";
 
 std::cout <<"What's your pair's name?: \n";
 std::cin>>pair_name;
