@@ -1,29 +1,21 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
 int main () {
     int a, age;
-    string name;
-
-    cout << "Enter your name: ";
-    cin >> name;
-    cout << "Enter your age: ";
-    cin >> age;
-
+    std::string name;
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+    std::cout << "Enter your age: ";
+    std::cin >> age;
     if (name == "Mariam" && age == 21) {
         a = 1;
-        cout << a;
     } else {
-          a = 0;
-          cout << a;
+        a = 0;
     }
-
+    std::cout << a;
     return 0;
 }
-
-
-
 
 
 

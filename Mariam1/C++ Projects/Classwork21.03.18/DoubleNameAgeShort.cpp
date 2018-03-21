@@ -1,25 +1,23 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
 int main () {
-
-    string userName;
-    string pairName;
+    std::string userName;
+    std::string pairName;
     int userAge;
     int pairAge;
+    int a;
+    
+    std::cout << "Enter user's name!\n";
+    std::cin >> userName;
+    std::cout << "Enter pair's name!\n";
+    std::cin >> pairName;
+    std::cout << "Enter user's age!\n";
+    std::cin >> userAge;
+    std::cout << "Enter pair's age!\n";
+    std::cin >> pairAge;
 
-    cout << "Enter user's name!\n";
-    cin >> userName;
-    cout << "Enter pair's name!\n";
-    cin >> pairName;
-    cout << "Enter user's age!\n";
-    cin >> userAge;
-    cout << "Enter pair's age!\n";
-    cin >> pairAge;
-
-    ((userName == "Mariam" && userAge == 21) || (pairName == "Edgar" && pairAge == 16 )) ? cout << "1" : cout << "0";
-
+    ((userName == "Mariam" && userAge == 21) || (pairName == "Edgar" && pairAge == 16 )) ? (a=1):(a=0);
+    std::cout << a; 
     return 0;
 }
-

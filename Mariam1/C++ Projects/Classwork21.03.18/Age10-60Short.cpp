@@ -1,35 +1,15 @@
 #include <iostream>
-using namespace std;
 
 int main () {
     int a, age;
-    cout << "How old are you? \n";
-    cin >> age;
+    std::cout << "How old are you? \n";
+    std::cin >> age;
 
     a = (age < 10 || age > 60) ? 1 : 0;
-    std::cout<<a;
+    std::cout << a;
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

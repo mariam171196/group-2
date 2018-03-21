@@ -6,14 +6,12 @@ int main () {
     std::cin >> age;
 
     if (age < 10 || age > 60) {	
-        cout << a = 1;
+        std::cout << (a = 1);
     } else {
-        cout << a = 0; 
+        std::cout << (a = 0); 
     }
-
     return 0;
 }
-
 
 
 

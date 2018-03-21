@@ -1,108 +1,96 @@
 #include <iostream>
-using namespace std;
-
 
 int main () {
-
     int n;
-    cout << "Enter a number from 1 to 9999: \n";
-    cin >> n;
+    std::cout << "Enter a number from 1 to 9999: \n";
+    std::cin >> n;
 
     if (n >= 1 && n <= 9999) {
         switch(n / 1000) {
-            case 2 : cout << "erku";
-	        		 break;
-	        	case 3 : cout << "ereq";
-	        		 break;
-	    		case 4 : cout << "chors";
+            case 2 : std::cout << "erku";
+	            break;
+	        case 3 : std::cout << "ereq";
+	       		 break;
+	   		case 4 : std::cout << "chors";
 	             break;
-	    		case 5 : cout << "hing";
+	   		case 5 : std::cout << "hing";
 	             break;
-	    		case 6 : cout << "vec";
+	   		case 6 : std::cout << "vec";
 	             break;
-	    		case 7 : cout << "yot";
+    		case 7 : std::cout << "yot";
 	             break;
-	    		case 8 : cout << "ut";
+	        case 8 : std::cout << "ut";
 	             break;
-	    		case 9 : cout << "inny";
+	    	case 9 : std::cout << "inny";
 	             break;
-	     }
-
-        if (n / 1000) {
-            cout << " hazar ";
+	     } 
+	    if (n / 1000) {
+              std::cout << " hazar ";
         }
-
         switch((n % 1000) / 100) {
-            case 2 : cout << "erku";
+            case 2 : std::cout << "erku";
                 break;
-            case 3 : cout << "ereq";
+            case 3 : std::cout << "ereq";
                 break;
-            case 4 : cout << "chors";
+            case 4 : std::cout << "chors";
                 break;
-            case 5 : cout << "hing";
+            case 5 : std::cout << "hing";
                 break;
-            case 6 : cout << "vec";
+            case 6 : std::cout << "vec";
                 break;
-            case 7 : cout << "yot";
+            case 7 : std::cout << "yot";
                 break;
-            case 8 : cout << "ut";
+            case 8 : std::cout << "ut";
                 break;
-            case 9 : cout << "inny";
+            case 9 : std::cout << "inny";
                 break;
        }
-
-
        if ((n % 1000) / 100) {
-           cout << " haryur ";
+           std::cout << " haryur ";
        }
 
        switch((n % 100) / 10) {
-            case 1 : cout << "tasn";
-    	          break;
-            case 2 : cout << "qsan";
+            case 1 : std::cout << "tasn";
+    	         break;
+            case 2 : std::cout << "qsan";
                 break;
-            case 3 : cout << "eresun";
+            case 3 : std::cout << "eresun";
                 break;
-            case 4 : cout << "qarasun";
+            case 4 : std::cout << "qarasun";
                 break;
-            case 5 : cout << "hisun";
+            case 5 : std::cout << "hisun";
                 break;
-            case 6 : cout << "vatsun";
+            case 6 : std::cout << "vatsun";
                 break;
-            case 7 : cout << "yotanasun";
+            case 7 : std::cout << "yotanasun";
                 break;
-            case 8 : cout << "utanasun";
+            case 8 : std::cout << "utanasun";
                 break;
-            case 9 : cout << "innsun";
+            case 9 : std::cout << "innsun";
                 break;
-
        }
-
        switch(n % 10) {
-           case 1 : cout << "mek";
+           case 1 : std::cout << "mek";
                break;
-           case 2 : cout << "erku";
+           case 2 : std::cout << "erku";
                break;
-           case 3 : cout << "ereq";
+           case 3 : std::cout << "ereq";
                break;
-           case 4 : cout << "chors";
+           case 4 : std::cout << "chors";
                break;
-           case 5 : cout << "hing";
+           case 5 : std::cout << "hing";
                break;
-           case 6 : cout << "vec";
+           case 6 : std::cout << "vec";
                break;
-           case 7 : cout << "yot";
+           case 7 : std::cout << "yot";
                break;
-           case 8 : cout << "ut";
+           case 8 : std::cout << "ut";
                break;
-           case 9 : cout << "inny";
+           case 9 : std::cout << "inny";
                break;
        }
     } else {
-          cout<<"Enter the correct number!";
+          std::cout<<"Enter the correct number!";
     }
-
-
-
     return 0;
 }
