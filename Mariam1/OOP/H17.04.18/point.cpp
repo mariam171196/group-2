@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+
 class Point {
     private:
         float x;
@@ -9,7 +10,14 @@ class Point {
             :x(x)
             ,y(y)
         {}
+        Point(const Point &p) {
+            x = p.x;
+            y = p.y;
+            std::cout<< "Copy Point Constructor" << std::endl;
+        }
         ~Point() {}
+       
+
         void setx(float x) {
             this->x = x;
         }
@@ -27,7 +35,7 @@ class Point {
         }
 };
 
-class Line : Point {
+class Line : public Point {
     private:
         float x1, y1;
     public:
@@ -36,8 +44,14 @@ class Line : Point {
             , x1(x1)
             , y1(y1)
         {}
+        Line (const Line &l): Point (l) {
+            x1 = l.x1;
+            y1 = l.y1;
+            std::cout << "Copy Line constructor" << std::endl;
+        }        
+
         ~Line() {}
-          
+
         void setx1(float x1) {
             this->x1 = x1;
         }
@@ -50,24 +64,25 @@ class Line : Point {
         float gety1() {
             return y1;
         }
-        float getline() {
+        float getLine() {
             return  sqrt( pow(getx()-getx1(),2)+pow(gety()-gety1(),2) );
         }
         void printLine() {
-            std::cout << "Hatvaci chapsy: " << getline() << std::endl;
+            std::cout << "Hatvaci chapsy: " << getLine() << std::endl;
          }
         void printLinesNumbers() {
             float k = gety() / getx();
+            float b = gety() - k * getx();
             
-            for (int i = getx(); i <= getx1(); i++) {
-                std::cout <<"x = "<<  i << ", y = " << k * i << std::endl;
+            for (int i = getx(); i <= getx1(); ++i) {
+                std::cout <<"x = "<<  i << ", y = " << k * i + b << std::endl;
             }            
         }
 };
  
-class Triangle : Point {
+class Triangle : public Point {
      private:
-        float  x1, y1, x2, y2, l;
+        float  x1, y1, x2, y2;
      public:
         Triangle (float x, float y, float x1, float y1, float x2, float y2)
             :Point(x,y)
@@ -76,6 +91,13 @@ class Triangle : Point {
             , x2(x2)
             , y2(y2)
         {}
+        Triangle (const Triangle &t) : Point(t) {
+            x1 = t.x1;
+            y1 = t.y1;
+            x2 = t.x2;
+            y2 = t.y2;
+            std::cout << "Copy Triangle Constructro" << std::endl;
+        }
         ~Triangle() {}
         void setx1(float x1) {
             this->x1 = x1;
@@ -101,9 +123,6 @@ class Triangle : Point {
         float gety2() {
             return y2;
         }
-        void setl(float l) {
-            this->l = l;
-        }
         float getl() {
             return sqrt(pow(getx()-getx1(),2)+pow(gety()-gety1(),2))+ sqrt(pow(getx1()-getx2(),2)+pow(gety1()-gety2(),2))+ sqrt(pow(getx2()-getx(),2)+pow(gety2()-gety(),2));
         }
@@ -115,17 +134,24 @@ class Triangle : Point {
         }
 };
 
-class Rectangle : Point {
+class Rectangle : public Point {
     private:
-        float  x3, y3;
+        float x3, y3;
+        
     public:
         Rectangle (float x, float y, float x3, float y3)
             :Point(x,y)
             , x3(x3)
             , y3(y3)
-         {}
+        {}
+        Rectangle (const Rectangle &r) : Point(r) {
+            x3 = r.x3;
+            y3 = r.y3;
+            std::cout << "Copy Rectangle Constructor" << std::endl;
+        }        
         ~Rectangle() {}
-        void setx3 (float x3) {
+
+         void setx3(float x3) {
             this->x3 = x3;
         }
         void sety3(float y3) {
@@ -137,13 +163,10 @@ class Rectangle : Point {
         float gety3() {
             return y3;
         }
-        float getline() {
-            return  sqrt( pow(getx()-getx3(),2)+pow(gety()-gety3(),2) );
-        }
         void printRectangle_L() {
-            std::cout << getline() << " koxmov qarakusu paragicy: " << getline()*4 << std::endl;
+            std::cout << "Uxxankyan makeresy:" << ((getx()-getx3())* (gety()-gety3()) )<< std::endl;
         }
         void printRectangle_S() {
-            std::cout << getline() << " koxmov qarakusu makeresy: " << pow(getline(),2) << std::endl;
+            std::cout << "Uxxankyan paragicy: " << ((getx3()-getx())*2 + (gety3()-gety())*2 )<< std::endl;
         }
 };
