@@ -1,43 +1,36 @@
 #include <iostream>
-#include "point.cpp"
+#include "tnayin.cpp"
 
 int main() {
+    float x1, y1, x2, y2, x3, y3;
+    std::cout << "x1: ";
+    std::cin >> x1;
+    std::cout << "x2: ";
+    std::cin >> y1;
+    std::cout << "x2: ";
+    std::cin >> x2;
+    std::cout << "x2: ";
+    std::cin >> y2;
+    std::cout << "x3: ";
+    std::cin >> x3;
+    std::cout << "x3: ";
+    std::cin >> y3;
 
-    Point p(1,5);   
-    
-    Point a(p);
-    a.printPoint();
-
-    Line  l(a.getx(), a.gety(), 5, 7);
-    std::cout << "Point2 (" << l.getx1() << "," << l.gety1() << ");" << std::endl;
-    std::cout << "Point1-ic Point2 mijakayqum gtnvum en hetevyal ketery!" << std::endl;
-    
-    l.printLinesNumbers();
-    l.printLine();
-   
-    Triangle t(p.getx(), p.gety(), 4, 6, 7, 9);
-    Triangle c(t);
-    c.printTriangle_L();
-    c.printTriangle_S();
+    Point a(x1, y1);
+    Point b(x2, y2);
+    Point c(x3, y3);
  
-    Rectangle r(p.getx(), p.gety(), 5, 7);
-    Rectangle d(r);
-    d.printRectangle_L();
-    d.printRectangle_S();
+    Line l(a, b);
+    std::cout << "Hatvaci erkarutyuny: " << l.getLine() << std::endl;
+
+    Triangle t(a, b, c);
+    std::cout << "Erankyan paragicy: " << t.getL() << std::endl;
+    std::cout << "Erankyan makeresy: " << t.getS() << std::endl;
+
+    Rectangle r(a, b);
+    std::cout << "Uxxankyan makeresy: " << r.printRectangle_S() << std::endl;
+    std::cout << "Uxxankyan paragicy" << r.printRectangle_L() << std::endl;
 
 return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
