@@ -1,5 +1,4 @@
 #include "vector.h"
-#include "vector.cpp"
 #include <iostream>
 
 int main () {
@@ -16,10 +15,8 @@ int main () {
      v.Remove(8);
      v.Print();
      std::cout << "Index of the 11: " << v.Find(11) << std::endl;
-     std::cout <<v.Find(11) << "` number " <<std::endl;
      v.Resize(15);
      std::cout << "Vector after resize: " << std::endl;
      v.Print();
-     v[1];
      return 0;
 }
