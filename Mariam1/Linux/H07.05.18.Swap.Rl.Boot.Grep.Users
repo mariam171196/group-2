@@ -1,0 +1,89 @@
+4.GREP
+  /group-2/C++$ grep -r 'for' | sort > a.txt
+
+5.GROUPS and USERS
+  sudo adduser user1
+  sudo adduser user2
+  sudo adduser user3
+
+  sudo addgroup group1
+  sudo addgroup group2
+  sudo addgroup group3
+
+  sudo usermod -a -G group1 user1
+  sudo usermod -a -G group1 user2
+  sudo usermod -a -G group2 user2
+  sudo usermod -a -G group2 user3
+  sudo usermod -a -G group3 user3
+  sudo usermod -a -G group3 user2
+  sudo usermod -a -G group3 user1
+
+  mkdir f1
+  mkdir f2
+
+  sudo chgrp group1 f1
+  sudo chgrp group2 f2
+
+  sudo chown user1:group1 f1
+  sudo chown user2:group1 f2
+
+  sudo chmod ug=rwx f1
+  sudo chmod o=r f1
+  sudo chmod o=rx f2
+  sudo chmod ug=rw f2
+
+  su - user1
+
+  cat etc/group
+  cat etc/passwd
+
+1.SWAP
+  sudo fallocate -l 2G /swapfile-1
+  sudo ls -lh /swapfile-1
+  sudo chown root:root /swapfile-1
+  sudo chmod 0600 /swapfile-1
+  sudo ls -lh /swapfile-1
+  sudo mkswap /swapfile-1
+  sudo swapon /swapfile-1
+  sudo swapon -s
+  sudo grep -i swap /proc/meminfo
+  sudo swapoff /swapfile-1
+  vim /etc/fstab
+   ավելացնում ենք հետևյալ տողը՝ /swapfile-1 none swap sw 0 0
+
+2. BOOT PROCESS
+  cd /var/tmp
+  sudo touch my_script.sh
+
+  #!/bin/bash
+  echo "This is a sample script to test auto run during boot" > /var/tmp/script.out
+  echo "The time the script run was -->  `date`" >> /var/tmp/script.out
+
+  sudo chmod +x /var/tmp/my_script.sh
+  cd /etc/systemd/system
+
+  vim sample.service
+[Unit]
+Description=Description for sample script goes here
+After=network.target
+[Service]
+Type=simple
+ExecStart=/var/tmp/my_script.sh
+TimeoutStartSec=0
+[Install]
+WantedBy=default.target
+
+  systemctl daemon-reload
+  systemctl enable sample.service
+  systemctl start sample.service
+  systemctl reboot
+
+3.RUNLEVELS
+   Ստուգել -> who -r կամ  runlevel  
+   Փոխել ֊> init 0,1,2,3,4,5,6
+  sudo vim /etc/init/rc-sysinit.conf
+  env DEFAULT_RUNLEVEL=N
+  reboot
+
+
+
