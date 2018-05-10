@@ -1,0 +1,28 @@
+1.find .txt and .cpp
+  cd /home/mariam
+  mkdir f1 f2
+  touch /home/mariam/f1 a.txt b.txt c.cpp
+  touch /home/mariam/f2 d.txt e.cpp
+  find  /home/mariam/ -type f -regex ".*\.\(txt\|cpp\)"
+
+2.PATH
+  cd /home/mariam/scripts/
+  touch MyScript.sh
+  vim MyScript.sh 
+
+#!/bin/bash
+cd /home/mariam/Desktop
+mkdir f1
+cd f1
+touch a.txt b.txt
+  
+  sudo chmod +x MyScript.sh
+  export PATH=$PATH:~/home/mariam/scripts/
+  view .bashrc
+    ամենավերջում ավելացնում ենք նույն տողը
+3.GPARTED
+  sudo apt install gparted
+  gparted
+  create new partition (ext2)
+  format to ext3
+  
